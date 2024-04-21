@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+/* CSS cho menu */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul ul {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+ul ul li {
+  float: none;
+}
+
+ul ul li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#home">Trang chủ</a></li>
+  <li>
+    <a href="#dao_tao">Đào tạo</a>
+    <ul>
+      <li><a href="#do_hoa">Đồ họa</a></li>
+      <li><a href="#web">Web</a></li>
+      <li><a href="#mang">Mạng</a></li>
+    </ul>
+  </li>
+  <li><a href="#dich_vu">Dịch vụ</a></li>
+  <li><a href="#lien_he">Liên hệ</a></li>
+</ul>
+
+<script>
+$(document).ready(function(){
+  $('ul li').hover(function(){
+    $(this).find('ul').stop().slideDown(200);
+  }, function(){
+    $(this).find('ul').stop().slideUp(200);
+  });
+
+  $('ul ul li').hover(function(){
+    $(this).css('background-color', '#2f6311');
+  }, function(){
+    $(this).css('background-color', '#f9f9f9');
+  });
+});
+</script>
+
+</body>
+</html>
